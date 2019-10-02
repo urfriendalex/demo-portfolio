@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    display: border-box;
+    transition: all .3s ease-in-out;
+}
+
+html, body {
+	height: 100%;
+}
+
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+    background: black;
+    color: white;
+}
+
+
+.potfolio-open-btn {
+	font-family: forma-djr-display, sans-serif;
+	font-weight: 600;
+	position: relative;
+	z-index: 2;
+	font-size: 5em;
+	mix-blend-mode: difference;
+	-webkit-text-stroke: 2px white;
+	text-stroke: 2px white;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+	color: transparent;
+    pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: black;
+    border: none;
+    transition: all .3s ease-in-out;
+}
+
+.btn-wrapper a:hover .potfolio-open-btn{
+    -webkit-text-fill-color: white;
+	text-fill-color: white;
+    color: white;
+}
+
+.glitch{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-transform: uppercase;
+}
+
+.glitch h1{
+    letter-spacing: 0.05em;
+    animation: glitch 1s linear infinite;
+}
+
+.glitch:nth-child(1) h1{
+    animation-delay: 0.5s;
+}
+
+  
+  @keyframes glitch{
+    2%,64%{
+      transform: translate(2px,0) skew(0deg);
+    }
+    4%,60%{
+      transform: translate(-2px,0) skew(0deg);
+    }
+    62%{
+      transform: translate(0,0) skew(5deg); 
+    }
+  }
+  
+  .glitch h1:before,
+  .glitch h1:after{
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+  
+  .glitch h1:before{
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+
+  .glitch:nth-child(2) h1:before{
+      animation-delay: 0.3s;
+  }
+
+  
+  @keyframes glitchTop{
+    2%,64%{
+      transform: translate(2px,-2px);
+    }
+    4%,60%{
+      transform: translate(-2px,2px);
+    }
+    62%{
+      transform: translate(13px,-1px) skew(-13deg); 
+    }
+  }
+  
+  .glitch h1:after{
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+
+  .glitch:nth-child(1) h1:after{
+      animation-delay: 0.8s;
+  }
+
+  
+  @keyframes glitchBotom{
+    2%,64%{
+      transform: translate(-2px,0);
+    }
+    4%,60%{
+      transform: translate(-2px,0);
+    }
+    62%{
+      transform: translate(-22px,5px) skew(21deg); 
+    }
+  }
+
+
+  .projects{
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: white;
+      color: black;
+      z-index: 3;
+      clip-path: circle(0px at 50% 62.5%);
+      -webkit-clip-path: circle(0px at 50% 62.5%);
+      transition: all 2s ease-in-out;
+  }
+
+  .projects.visible{
+    clip-path: circle(1000px at 50% 62.5%);
+  }
+
+  .projects ul{
+    margin: 0;
+    display: flex;
+    flex-flow: column wrap;
+    height: 100%;
+    list-style: none;
+  }
+
+  .projects ul li{
+    width: 50%;
+    height: 50%;
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projects ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    z-index: 5;
+  }
+
+  .projects ul li a:hover{
+    color: white;
+  }
+
+  .circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+    background: black;
+    border-radius: 80%;
+    transform: scale(0);
+    z-index:4;
+  }
+
+  .exit{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 75px;
+      width: 75px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 6;
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-top: 10px;
+  }
+
+  .exit span::after{
+    content: 'x';
+	font-weight: 600;
+	position: relative;
+	font-size: 3em;
+	mix-blend-mode: difference;
+	-webkit-text-stroke: 2px black;
+	text-stroke: 2px black;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+    color: transparent;
+    background: transparent;
+    pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    transition: all .3s ease-in-out;
+  }
+
+  .exit:hover span::after{
+    -webkit-text-fill-color: white;
+    text-fill-color: white;
+    color: white;
+    
+    
+  }
