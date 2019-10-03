@@ -3,6 +3,8 @@
     padding: 0;
     display: border-box;
     transition: all .3s ease-in-out;
+    overflow: hidden;
+    font-family: "aktiv-grotesk", "Helvetica Neue", "Helvetica", sans-serif;
 }
 
 html, body {
@@ -23,25 +25,36 @@ html, body {
 	font-weight: 600;
 	position: relative;
 	z-index: 2;
-	font-size: 5em;
+  font-size: 5em;
+  text-align: center;
+  width: 100%;
 	mix-blend-mode: difference;
 	-webkit-text-stroke: 2px white;
 	text-stroke: 2px white;
 	-webkit-text-fill-color: transparent;
 	text-fill-color: transparent;
 	color: transparent;
-    pointer-events: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    background: black;
-    border: none;
-    transition: all .3s ease-in-out;
+  pointer-events: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: black;
+  border: none;
+  text-shadow: -5px 3px 0px rgb(255, 204, 0),
+  -5px 3px 0px rgb(255, 204, 0);
+  transition: all .3s ease-in-out;
+}
+.btn-wrapper a{
+  width: 100%;
 }
 
 .btn-wrapper a:hover .potfolio-open-btn{
-    -webkit-text-fill-color: white;
-	text-fill-color: white;
-    color: white;
+  -webkit-text-fill-color: white;
+  text-fill-color: white;
+  text-shadow: -8px 10px 0px rgb(255, 204, 0),
+  -9px 12px 0px #000,
+  -12px 15px 0px rgb(255, 204, 0),
+  -13px 18px 0px #000,
+  -15px 20px 0px rgb(255, 204, 0)
 }
 
 .glitch{
@@ -126,6 +139,12 @@ html, body {
     }
   }
 
+  .glitch:hover{
+    animation: none;
+    color: rgb(255, 204, 0);
+    transition: all .2s ease-in;
+  }
+
 
   .projects{
       position: absolute;
@@ -136,11 +155,13 @@ html, body {
       z-index: 3;
       clip-path: circle(0px at 50% 62.5%);
       -webkit-clip-path: circle(0px at 50% 62.5%);
-      transition: all 2s ease-in-out;
+      transition: all 1.2s cubic-bezier(0.71,-0.38, 1, 1.01);
   }
 
   .projects.visible{
-    clip-path: circle(1000px at 50% 62.5%);
+    clip-path: circle(100% at 50% 62.5%);
+    -webkit-clip-path: circle(100% at 50% 62.5%);
+    transition: all 1.2s cubic-bezier(0.2, 0.65, 0.63, 0.49);
   }
 
   .projects ul{
@@ -156,19 +177,54 @@ html, body {
     height: 50%;
     padding: 3%;
     display: flex;
+    align-items: center;
     justify-content: center;
     align-items: center;
   }
 
   .projects ul li a{
+    font-size: calc(100vw/80);
     text-decoration: none;
     color: black;
     text-transform: uppercase;
     z-index: 5;
+    font-weight: 700;
+    letter-spacing: 1%;
+    width: 100%;
+    line-height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 -0 0px transparent,
+                  0 -0 0px transparent,
+                  -0 0 0px transparent,
+                  -0 0 0px transparent;
+    transition: 0.3s ease-in;
   }
 
   .projects ul li a:hover{
-    color: white;
+    text-shadow: 12px -11px 0px rgb(255, 204, 0),
+                  14px -12px 0px #000,
+                  -12px 11px 0px rgb(255, 204, 0),
+                  -10px 12px 0px #000;
+    animation: shadowswith 2s infinite;
+    animation-delay: 0.4s;
+  }
+
+
+  @keyframes shadowswith{
+    0%,100%{
+      text-shadow: 12px -11px 0px rgb(255, 204, 0),
+                  14px -12px 0px #000,
+                  -12px 11px 0px rgb(255, 204, 0),
+                  -10px 12px 0px #000;
+    }
+    50%{
+      text-shadow: -12px -11px 0px rgb(255, 204, 0),
+      -14px -12px 0px #000,
+      12px 11px 0px rgb(255, 204, 0),
+      10px 12px 0px #000;
+    }
   }
 
   .circle {
@@ -185,43 +241,71 @@ html, body {
   }
 
   .exit{
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 75px;
-      width: 75px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 6;
-      border-radius: 50%;
-      margin-right: 10px;
-      margin-top: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+
+  .exit span{
+    width: 100%;
+    height: 100%;
   }
 
   .exit span::after{
-    content: 'x';
+  content: 'x';
 	font-weight: 600;
 	position: relative;
-	font-size: 3em;
+  font-size: 3em;
+  left: 50%;
 	mix-blend-mode: difference;
 	-webkit-text-stroke: 2px black;
 	text-stroke: 2px black;
 	-webkit-text-fill-color: transparent;
 	text-fill-color: transparent;
-    color: transparent;
-    background: transparent;
-    pointer-events: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: none;
-    transition: all .3s ease-in-out;
+  color: transparent;
+  background: transparent;
+  pointer-events: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  width: 100%;
+  transition: all .3s ease-in-out;
   }
 
   .exit:hover span::after{
-    -webkit-text-fill-color: white;
-    text-fill-color: white;
-    color: white;
-    
-    
+    -webkit-text-fill-color: rgb(255, 204, 0);
+    text-fill-color: rgb(255, 204, 0);
+    color: rgb(255, 204, 0);    
+  }
+
+
+
+  @media (max-width:500px){
+
+    h1.title{
+      font-size: 2em;
+    }
+    .sub-title{
+      font-size: 1em;
+    }
+
+    .potfolio-open-btn{
+      font-size: 3em;
+    }
+    .circle{
+      display: none;
+    }
+
+  .projects ul li a{
+    font-size: calc(100vw/33)
+  }    
   }
