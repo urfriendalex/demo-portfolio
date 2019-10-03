@@ -228,6 +228,7 @@ html, body {
   }
 
   .circle {
+    display: none;
     position: absolute;
     width: 100px;
     height: 100px;
@@ -305,7 +306,11 @@ html, body {
       display: none;
     }
 
+    .glitch:nth-child(2){
+      padding: 3% !important;
+    }
+
   .projects ul li a{
-    font-size: calc(100vw/33)
-  }    
+    font-size: calc(100vw/40)
+    }    
   }
