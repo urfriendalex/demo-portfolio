@@ -1,316 +1,345 @@
-*{
-    margin: 0;
-    padding: 0;
-    display: border-box;
-    transition: all .3s ease-in-out;
-    overflow: hidden;
-    font-family: "aktiv-grotesk", "Helvetica Neue", "Helvetica", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  display: border-box;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  font-family: "aktiv-grotesk", "Helvetica Neue", "Helvetica", sans-serif;
 }
 
-html, body {
-	height: 100%;
-}
-
-
-.wrapper{
-    height: 100%;
-    width: 100%;
-    background: black;
-    color: white;
+html,
+body {
+  height: 100%;
 }
 
 
-.potfolio-open-btn {
-	font-family: forma-djr-display, sans-serif;
-	font-weight: 600;
-	position: relative;
-	z-index: 2;
+.wrapper {
+  height: 100%;
+  width: 100%;
+  background: black;
+  color: white;
+}
+
+.projects-open-btn {
+  cursor: pointer;
+  font-family: forma-djr-display, sans-serif;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
   font-size: 5em;
   text-align: center;
   width: 100%;
-	mix-blend-mode: difference;
-	-webkit-text-stroke: 2px white;
-	text-stroke: 2px white;
-	-webkit-text-fill-color: transparent;
-	text-fill-color: transparent;
-	color: transparent;
-  pointer-events: none;
+  mix-blend-mode: difference;
+  -webkit-text-stroke: 2px white;
+  text-stroke: 2px white;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  outline: none !important;
+  color: transparent;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   background: black;
   border: none;
-  text-shadow: -5px 3px 0px rgb(255, 204, 0),
-  -5px 3px 0px rgb(255, 204, 0);
-  transition: all .3s ease-in-out;
-}
-.btn-wrapper a{
-  width: 100%;
+  text-shadow: -5px 3px 0px rgb(255, 204, 0), -5px 3px 0px rgb(255, 204, 0);
+  transition: all 0.3s ease-in-out;
 }
 
-.btn-wrapper a:hover .potfolio-open-btn{
+.btn-wrapper .projects-open-btn:hover {
   -webkit-text-fill-color: white;
   text-fill-color: white;
-  text-shadow: -8px 10px 0px rgb(255, 204, 0),
-  -9px 12px 0px #000,
-  -12px 15px 0px rgb(255, 204, 0),
-  -13px 18px 0px #000,
-  -15px 20px 0px rgb(255, 204, 0)
+  text-shadow: -8px 10px 0px rgb(255, 204, 0), -9px 12px 0px #000,
+    -12px 15px 0px rgb(255, 204, 0), -13px 18px 0px #000,
+    -15px 20px 0px rgb(255, 204, 0);
 }
 
-.glitch{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    text-transform: uppercase;
+.header {
+  cursor: url("./cursor.png"),
+    auto;
 }
 
-.glitch h1{
-    letter-spacing: 0.05em;
-    animation: glitch 1s linear infinite;
+.glitch {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-transform: uppercase;
 }
 
-.glitch:nth-child(1) h1{
-    animation-delay: 0.5s;
+.glitch h1 {
+  letter-spacing: 0.05em;
+  animation: glitch 1s linear infinite;
 }
 
-  
-  @keyframes glitch{
-    2%,64%{
-      transform: translate(2px,0) skew(0deg);
-    }
-    4%,60%{
-      transform: translate(-2px,0) skew(0deg);
-    }
-    62%{
-      transform: translate(0,0) skew(5deg); 
-    }
+.glitch:nth-child(1) h1 {
+  animation-delay: 0.5s;
+}
+
+.glitch h1:before,
+.glitch h1:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.glitch h1:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.glitch:nth-child(2) h1:before {
+  animation-delay: 0.3s;
+}
+
+.glitch h1:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+.glitch:nth-child(1) h1:after {
+  animation-delay: 0.8s;
+}
+
+.glitch a{
+    text-decoration: none !important;
+    color: white;
+}
+
+.glitch h1:hover {
+  color: rgb(255, 204, 0);
+  transition: all 0.2s ease-in;
+}
+
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
   }
-  
-  .glitch h1:before,
-  .glitch h1:after{
-    content: attr(title);
-    position: absolute;
-    left: 0;
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
   }
-  
-  .glitch h1:before{
-    animation: glitchTop 1s linear infinite;
-    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+
+.projects {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: white;
+  color: black;
+  z-index: 3;
+  clip-path: circle(0px at 50% 62.5%);
+  -webkit-clip-path: circle(0px at 50% 62.5%);
+  transition: all 0.9s ease-in-out;
+}
+
+.projects.visible {
+  clip-path: circle(100% at 50% 62.5%);
+  -webkit-clip-path: circle(100% at 50% 62.5%);
+}
+
+.projects ul {
+  margin: 0;
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+  list-style: none;
+}
+
+.projects ul li {
+  width: 50%;
+  height: 50%;
+  padding: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects ul li a {
+  font-size: calc(100vw / 65);
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  z-index: 5;
+  font-weight: 700;
+  letter-spacing: 1%;
+  width: 100%;
+  line-height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 -0 0px transparent, 0 -0 0px transparent, -0 0 0px transparent,
+    -0 0 0px transparent;
+  transition: 0.3s ease-in;
+}
+
+.projects ul li a:hover {
+  text-shadow: 12px -11px 0px rgb(255, 204, 0), 14px -12px 0px #000,
+    -12px 11px 0px rgb(255, 204, 0), -10px 12px 0px #000;
+  animation: shadowswith 2s infinite;
+  animation-delay: 0.4s;
+}
+
+@keyframes shadowswith {
+  0%,
+  100% {
+    text-shadow: 12px -11px 0px rgb(255, 204, 0), 14px -12px 0px #000,
+      -12px 11px 0px rgb(255, 204, 0), -10px 12px 0px #000;
+  }
+  50% {
+    text-shadow: -12px -11px 0px rgb(255, 204, 0), -14px -12px 0px #000,
+      12px 11px 0px rgb(255, 204, 0), 10px 12px 0px #000;
+  }
+}
+
+.circle {
+  display: none;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+  background: black;
+  border-radius: 80%;
+  transform: scale(0);
+  z-index: 4;
+}
+
+.exit {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.exit span {
+  width: 100%;
+  height: 100%;
+}
+
+.exit span::after {
+  content: "x";
+  font-weight: 600;
+  position: relative;
+  font-size: 3em;
+  left: 50%;
+  mix-blend-mode: difference;
+  -webkit-text-stroke: 2px black;
+  text-stroke: 2px black;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  color: transparent;
+  background: transparent;
+  pointer-events: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.exit:hover span::after {
+  -webkit-text-fill-color: rgb(255, 204, 0);
+  text-fill-color: rgb(255, 204, 0);
+  color: rgb(255, 204, 0);
+}
+
+@media (max-width: 500px) {
+  h1.title {
+    font-size: 2em;
+  }
+  .sub-title {
+    font-size: 1em;
   }
 
-  .glitch:nth-child(2) h1:before{
-      animation-delay: 0.3s;
+  .potfolio-open-btn {
+    font-size: 3em;
   }
-
-  
-  @keyframes glitchTop{
-    2%,64%{
-      transform: translate(2px,-2px);
-    }
-    4%,60%{
-      transform: translate(-2px,2px);
-    }
-    62%{
-      transform: translate(13px,-1px) skew(-13deg); 
-    }
-  }
-  
-  .glitch h1:after{
-    animation: glitchBotom 1.5s linear infinite;
-    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-  }
-
-  .glitch:nth-child(1) h1:after{
-      animation-delay: 0.8s;
-  }
-
-  
-  @keyframes glitchBotom{
-    2%,64%{
-      transform: translate(-2px,0);
-    }
-    4%,60%{
-      transform: translate(-2px,0);
-    }
-    62%{
-      transform: translate(-22px,5px) skew(21deg); 
-    }
-  }
-
-  .glitch h1:hover{
-    color: rgb(255, 204, 0);
-    transition: all .2s ease-in;
-  }
-
-
-  .projects{
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: white;
-      color: black;
-      z-index: 3;
-      clip-path: circle(0px at 50% 62.5%);
-      -webkit-clip-path: circle(0px at 50% 62.5%);
-      transition: all 2s ease-in-out;
-  }
-
-  .projects.visible{
-    clip-path: circle(100% at 50% 62.5%);
-    -webkit-clip-path: circle(100% at 50% 62.5%);
-    transition: all 2s ease-in-out;
-  }
-
-  .projects ul{
-    margin: 0;
-    display: flex;
-    flex-flow: column wrap;
-    height: 100%;
-    list-style: none;
-  }
-
-  .projects ul li{
-    width: 50%;
-    height: 50%;
-    padding: 3%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .projects ul li a{
-    font-size: calc(100vw/80);
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    z-index: 5;
-    font-weight: 700;
-    letter-spacing: 1%;
-    width: 100%;
-    line-height: 4em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 0 -0 0px transparent,
-                  0 -0 0px transparent,
-                  -0 0 0px transparent,
-                  -0 0 0px transparent;
-    transition: 0.3s ease-in;
-  }
-
-  .projects ul li a:hover{
-    text-shadow: 12px -11px 0px rgb(255, 204, 0),
-                  14px -12px 0px #000,
-                  -12px 11px 0px rgb(255, 204, 0),
-                  -10px 12px 0px #000;
-    animation: shadowswith 2s infinite;
-    animation-delay: 0.4s;
-  }
-
-
-  @keyframes shadowswith{
-    0%,100%{
-      text-shadow: 12px -11px 0px rgb(255, 204, 0),
-                  14px -12px 0px #000,
-                  -12px 11px 0px rgb(255, 204, 0),
-                  -10px 12px 0px #000;
-    }
-    50%{
-      text-shadow: -12px -11px 0px rgb(255, 204, 0),
-                    -14px -12px 0px #000,
-                    12px 11px 0px rgb(255, 204, 0),
-                    10px 12px 0px #000;
-    }
-  }
-
   .circle {
     display: none;
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 50%;
-    left: 50%;
-    margin: -50px 0 0 -50px;
-    background: black;
-    border-radius: 80%;
-    transform: scale(0);
-    z-index:4;
   }
 
-  .exit{
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100px;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 6;
-    border-radius: 50%;
-    margin-right: 10px;
-    margin-top: 10px;
+  .glitch:nth-child(2) {
+    padding: 3% !important;
   }
 
-  .exit span{
-    width: 100%;
-    height: 100%;
+  .projects ul li a {
+    font-size: calc(100vw / 40);
+  }
+  
+  .projects-open-btn:hover {
+    text-shadow: none;
   }
 
-  .exit span::after{
-    content: 'x';
-    font-weight: 600;
-    position: relative;
-    font-size: 3em;
-    left: 50%;
-    mix-blend-mode: difference;
-    -webkit-text-stroke: 2px black;
-    text-stroke: 2px black;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-    color: transparent;
-    background: transparent;
-    pointer-events: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: none;
-    width: 100%;
-    transition: all .3s ease-in-out;
+  .projects-open-btn {
+    -webkit-text-fill-color: white;
+    text-fill-color: white;
+    text-shadow: -8px 10px 0px rgb(255, 204, 0), -9px 12px 0px #000;
+    transition: none;
+    animation:textShadowsAnim infinite 4s;
+    animation-timing-function:steps(1);
+    font-size: 4rem;
   }
 
-  .exit:hover span::after{
-    -webkit-text-fill-color: rgb(255, 204, 0);
-    text-fill-color: rgb(255, 204, 0);
-    color: rgb(255, 204, 0);    
-  }
-
-
-
-  @media (max-width:500px){
-
-    h1.title{
-      font-size: 2em;
+  @keyframes textShadowsAnim {
+    0%,100%{
     }
-    .sub-title{
-      font-size: 1em;
+    15%,85%{
+      text-shadow:  -8px 10px 0px rgb(255, 204, 0), -9px 12px 0px #000,
+                    -12px 15px 0px rgb(255, 204, 0);
     }
-
-    .potfolio-open-btn{
-      font-size: 3em;
+    30%, 70%{
+      text-shadow:  -8px 10px 0px rgb(255, 204, 0), -9px 12px 0px #000,
+                    -12px 15px 0px rgb(255, 204, 0), -13px 18px 0px #000,
+                    -15px 20px 0px rgb(255, 204, 0);
     }
-    .circle{
-      display: none;
+    50%{
+      text-shadow:  -8px 10px 0px rgb(255, 204, 0), -9px 12px 0px #000,
+                    -12px 15px 0px rgb(255, 204, 0), -13px 18px 0px #000,
+                    -15px 20px 0px rgb(255, 204, 0),  -16px 23px 0px #000,
+                    -18px 25px 0px rgb(255, 204, 0),  -19px 28px 0px #000
     }
-
-    .glitch:nth-child(2){
-      padding: 3% !important;
-    }
-
-  .projects ul li a{
-    font-size: calc(100vw/40)
-    }    
   }
+}
